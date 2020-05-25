@@ -48,28 +48,7 @@
 </head>
 <body>
 	<div id="wrap">
-        <div id="header">
-            <span id="gotomain">
-                <a href="#"><img src="${pageContext.request.contextPath}/resources/images/partner/배경없는_굿플로고.png" id="logo" alt="logo" ><p class="title_name">파트너</p></a>
-            </span>
-            <span id="p_info">
-                <a href="#" style="float:left; "><img src="#" class="userphoto"><p>홍길동</p><img src="${pageContext.request.contextPath}/resources/images/partner/arrow.png" class="arrow"></a>
-            </span>
-        </div>
-        <div id="sidenav">
-            <ul>
-                <li><a href="#"><span class="icon1"></span><p>대시보드 </p></a></li>
-                <li><a href="#"><span class="icon2"></span><p>예약관리</p></a></li>
-                <li><a href="#"><span class="icon3"></span><p>일정관리</p></a></li>
-                <li><a href="#"><span class="icon4"></span><p>숙소관리</p></a></li>
-                <li><a href="#"><span class="icon5"></span><p>후기관리</p></a></li>
-                <li><a href="#"><span class="icon6"></span><p>체험관리</p></a></li>
-                <li><a href="#"><span class="icon7"></span><p>정산관리</p></a></li>
-                <li><a href="#"><span class="icon8"></span><p>메세지</p></a></li>
-                <li><a href="#"><span class="icon9"></span><p>계정관리</p></a></li>
-                <li><a href="#"><span class="icon10"></span><p>공지사항</p></a></li>
-            </ul>
-        </div>
+        <jsp:include page="../common/partnerMenubar.jsp"/>
         <div id="contents" >
             <div id="tab"></div>
             <div class="sitemap">
