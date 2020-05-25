@@ -8,7 +8,7 @@
 <title>Insert title here</title>
 <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100;300;400;500;700;900&display=swap" rel="stylesheet">
 <script src="http://code.jquery.com/jquery-1.11.3.min.js"></script>
-<link rel="stylesheet" type="text/css" href="p_common.css" />
+<link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/resources/css/partner/p_common.css" />
 <style>
     /*공통*/
     /* font */
@@ -50,10 +50,10 @@
 	<div id="wrap">
         <div id="header">
             <span id="gotomain">
-                <a href="#"><img src="image/배경없는_굿플로고.png" id="logo" alt="logo" ><p class="title_name">파트너</p></a>
+                <a href="#"><img src="${pageContext.request.contextPath}/resources/images/partner/배경없는_굿플로고.png" id="logo" alt="logo" ><p class="title_name">파트너</p></a>
             </span>
             <span id="p_info">
-                <a href="#" style="float:left; "><img src="#" class="userphoto"><p>홍길동</p><img src="image/arrow.png" class="arrow"></a>
+                <a href="#" style="float:left; "><img src="#" class="userphoto"><p>홍길동</p><img src="${pageContext.request.contextPath}/resources/images/partner/arrow.png" class="arrow"></a>
             </span>
         </div>
         <div id="sidenav">
@@ -79,7 +79,7 @@
             <br clear="both">
             <div class="con" style="color:#000">
                 <span id="page_title">
-                    <img src="image/집로고.jpg" style="vertical-align: middle;">
+                    <img src="${pageContext.request.contextPath}/resources/images/partner/집로고.jpg" style="vertical-align: middle;">
                     <p class="title_tt">계정관리</p>
                 </span><br>
                 <div style="margin-bottom: 50px;"></div>
