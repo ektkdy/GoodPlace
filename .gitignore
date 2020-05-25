@@ -96,3 +96,4 @@ local.properties
 hs_err_pid*
 
 # End of https://www.gitignore.io/api/java,eclipse
+GoodPlace/target/m2e-wtp/web-resources/META-INF/maven/com.kh/goodplace/pom.properties
