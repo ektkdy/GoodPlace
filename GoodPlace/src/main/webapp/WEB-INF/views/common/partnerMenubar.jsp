@@ -28,7 +28,7 @@
                 <a href="#"><img src="${ pageContext.servletContext.contextPath }/resources/images/partner/nobackgroundlogo.png" id="logo" alt="logo" ><p class="title_name">파트너</p></a>
             </span>
             <span id="p_info">
-                <a href="#" style="float:left; "><img src="#" class="userphoto"><p>홍길동</p></a><img src="../image/arrow.png" class="arrow">
+                <a href="#" style="float:left; "><img src="#" class="userphoto"><p>홍길동</p></a><img src="${pageContext.request.contextPath}/resources/images/partner/arrow.png" class="arrow">
             </span>
             <div id="slide_menu">
                 <ul>

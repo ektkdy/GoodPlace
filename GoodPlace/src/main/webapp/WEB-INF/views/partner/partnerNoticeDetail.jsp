@@ -36,6 +36,7 @@
 </style>        
 </head>
 <body>
+ <div id="wrap">
 	<jsp:include page="../common/partnerMenubar.jsp"/>
 	<div id="contents" >
             <div id="tab"></div>
@@ -47,7 +48,7 @@
             <br clear="both">
             <div class="con" style="color:#000">
                 <span id="page_title">
-                    <img src="image/집로고.jpg" style="vertical-align: middle;">
+                    <img src="${pageContext.request.contextPath}/resources/images/partner/집로고.jpg" style="vertical-align: middle;">
                     <p class="title_tt">공지사항</p>
                 </span>
                 <div class="con2">
@@ -67,7 +68,7 @@
                         </tbody>
                     </table>
                     <br>
-                    <div style="text-align: right;">
+                    <div style="text-align: right; margin-right:20px;">
                         <button id="gotoList">목록으로 가기</button>
                     </div>
                     <div>
@@ -87,9 +88,7 @@
                 </div>
             </div>
         </div>
-        <div id="footer">footer</div>
     </div>
-
     <script>
         $(function(){
             $(".bottum_tb>tbody>tr").click(function(){

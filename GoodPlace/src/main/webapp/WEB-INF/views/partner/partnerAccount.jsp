@@ -47,6 +47,7 @@
 </style>
 </head>
 <body>
+<div id="wrap">
 	<div id="wrap">
         <jsp:include page="../common/partnerMenubar.jsp"/>
         <div id="contents" >
@@ -133,7 +134,7 @@
                 </div>
             </div>
         </div>
-        <div id="footer">footer</div>
     </div>
+ </div>
 </body>
 </html>
