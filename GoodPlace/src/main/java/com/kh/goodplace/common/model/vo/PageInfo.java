@@ -9,7 +9,7 @@ import lombok.ToString;
 @Setter
 @Getter
 @NoArgsConstructor
-@AllArgsConstructor
+//@AllArgsConstructor
 @ToString
 public class PageInfo {
 	private int listCount;	// 총 게시글 갯수
@@ -19,4 +19,21 @@ public class PageInfo {
 	private int maxPage;	// 한 페이지에 보여질 페이징바 갯수
 	private int pageLimit;	
 	private int boardLimit;
+	
+	
+	public PageInfo(int listCount, int currentPage, int startPage, int endPage, int maxPage, int pageLimit,
+			int boardLimit) {
+		super();
+		this.listCount = listCount;
+		this.currentPage = currentPage;
+		this.startPage = startPage;
+		this.endPage = endPage;
+		this.maxPage = maxPage;
+		this.pageLimit = pageLimit;
+		this.boardLimit = boardLimit;
+	}
+	
+	
+	
+	
 }
