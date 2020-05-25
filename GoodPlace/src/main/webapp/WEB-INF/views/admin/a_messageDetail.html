@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100;300;400;500;700;900&display=swap" rel="stylesheet">
+<script src="http://code.jquery.com/jquery-1.11.3.min.js"></script>
+<link rel="stylesheet" type="text/css" href="../admin_css/a_common.css" />
+<style>
+    /*공통*/
+    /* font */
+    *{font-family: 'Noto Sans KR', sans-serif;}
+    /* 여백 초기화 */
+     body, div, ul, li, dl, dt, ol, h1, h2, h3, h4, h5, h6, input, fieldset, legend, p, select, table, th, td, tr, textarea, button, form {margin: 0; padding: 0;}
+    /* a 링크 초기화 */
+    a {color: #333333; text-decoration: none;}
+    /* body css */
+    body {background: #fff;}
+    #wrap {width: 1200px; margin: 0 auto; height: 900px; margin: 0 auto; font-size: 18px; color: #fff; text-align: center; text-transform: uppercase; }
+
+    /* 메세지 상세 */
+    .msgDetail{ width: 980px; padding-top:50px;}
+    .msgDetail p{padding-top: 20px; padding-bottom: 20px;}
+    .msgUser{border-top: 1px solid #bebebe; border-bottom: 1px solid #dbdbdb;}
+    .msgContents{height: 200px;}
+    .msgSend{border-top: 1px solid #dbdbdb; border-bottom: 1px solid #bebebe;}
+    .msgSend input{height: 60px; width: 830px; border: 0px;}
+    .msgSend button{float: right;margin-top: 12px; width: 140px; height: 35px; border-radius: 6px; border: 0; background-color: #34538a; color: #fff;}
+
+    /*페이징바*/
+    #pagingArea{width: 980px; text-align: right;}
+    #pagingArea a{padding-left:12px; padding-right: 12px; padding-top: 5px; padding-bottom: 5px;border: 1px solid #dbdbdb; cursor: pointer;}
+    #pagingArea a:hover{color: white; background-color: #34538a;}
+</style>        
+</head>
+<body>
+    <div id="wrap">
+        <div id="header">
+            <span id="gotomain">
+                <a href="#"><img src="../image/배경없는_굿플로고.png" id="logo" alt="logo" ><p class="title_name">관리자</p></a>
+            </span>
+            <span id="p_info">
+                <a href="#" style="float:left; "><img src="#" class="userphoto"><p>나관리</p></a><img src="../image/arrow.png" class="arrow">
+            </span>
+            <div id="slide_menu">
+                <ul>
+                    <li><a href="#">사용자페이지 가기</a></li>
+                    <li><a href="#">로그아웃</a></li>
+                </ul>
+            </div>
+        </div>
+        <div id="sidenav">
+            <ul>
+                <li><a href="#"><span class="icon1"></span><p>대시보드</p></a></li>
+                <li><a href="#"><span class="icon2"></span><p>회원관리</p></a></li>
+                <li><a href="#"><span class="icon3"></span><p>신고관리</p></a></li>
+                <li><a href="#"><span class="icon4"></span><p>후기관리</p></a></li>
+                <li><a href="#"><span class="icon5"></span><p>파트너관리</p></a></li>
+                <li><a href="#"><span class="icon6"></span><p>파워등록</p></a></li>
+                <li><a href="#"><span class="icon7"></span><p>게시글관리</p></a></li>
+                <li><a href="#"><span class="icon8"></span><p>정산관리</p></a></li>
+                <li><a href="#"><span class="icon9"></span><p>메세지</p></a></li>
+                <li><a href="#"><span class="icon10"></span><p>1:1문의관리</p></a></li>
+                <li><a href="#"><span class="icon11"></span><p>숙소관리</p></a></li>
+                <li><a href="#"><span class="icon12"></span><p>체험관리</p></a></li>
+            </ul>
+        </div>
+        <div id="contents" style="width:980px">
+            <div id="tab"></div>
+            <div class="sitemap"><a href="#"><span style="width: 30px;height: 30px; margin-right: 30px;">메세지상세</span></a></div>
+            <div class="con" style="color:#000">
+                <span id="page_title"><img src="../image/집로고.jpg" style="vertical-align: middle;"><p class="title_tt">메세지상세</p></span>
+                <div class="con2">
+                    <div class="msgDetail">
+                        <div class="msgUser">
+                            <p> <img src="#"> 방기남 님과의 대화</p>
+                        </div>
+                        <div class="msgContents">
+                            
+                        </div>
+                        <div class="msgSend">
+                            <input type="text" placeholder="메세지를 입력하세요">
+                            <button>SEND</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div id="footer">footer</div>
+    </div>
+
+    <script>
+        $(function(){
+            
+            $(".arrow").click(function(){
+                $("#slide_menu").slideToggle(500);
+            });
+        });
+    </script>
+
+</body>
+</html>

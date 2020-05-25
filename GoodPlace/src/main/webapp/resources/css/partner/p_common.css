@@ -22,7 +22,7 @@
 #sidenav ul li a{color:#34538a;}
 #sidenav ul li a:hover{font-weight: 600;}
 #sidenav ul li a.on{font-weight: 600;}
-#sidenav ul li a span{ float:left; margin-right:5px; width: 25px; height: 25px; background: url(image/list.jpg) no-repeat; }
+#sidenav ul li a span{ float:left; margin-right:5px; width: 25px; height: 25px; background: url(../../images/partner/list.jpg) no-repeat; }
 #sidenav ul li a p{margin-bottom:30px; }
 
 
