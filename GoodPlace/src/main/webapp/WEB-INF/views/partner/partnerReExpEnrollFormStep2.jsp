@@ -20,19 +20,27 @@
     /* body css */
     body {background: #fff;}
     #wrap {width: 1200px; height: 900px; margin: 0 auto; font-size: 18px; color: #fff; text-align: center; text-transform: uppercase; }
-    #contents{height: 1600px;}
+    #contents{height: 2000px;}
+
+    /* 거절div */
+    #comment{width:900px; padding:20px; margin-top: 50px; margin-bottom: 50px; border: 1px solid firebrick; border-radius: 4px;}
+    #comment #comment1{color:firebrick; font-size: 15px; text-align: right;}
+    #comment table p{width: 100px; text-align: center; margin-right: 20px; font-weight: bold;}
+    #comment table tr{vertical-align: top;}
+    #comment table input[type=text]{height: 35px; width: 200px; border-radius: 4px; border: 1px solid #bebebe;}
+    #comment textarea{width: 750px; height: 100px; resize: none; border: 1px solid #bebebe; border-radius: 4px; font-size: 15px;}
 
     /* 중앙 박스(div#stepOne) 내부공통 css */
     #stepOne{width:950px; border: 1px solid #dbdbdb;}
-    table th{width: 200px; padding-top: 30px; padding-left: 70px; vertical-align: top;}
-    table td{width:500px; padding-top: 30px; padding-left: 50px;}
-    table td label{font-size: 15px; padding-left: 10px;}
+    #stepOne table th{width: 200px; padding-top: 30px; padding-left: 70px; vertical-align: top;}
+    #stepOne table td{width:500px; padding-top: 30px; padding-left: 50px;}
+    #stepOne table td label{font-size: 15px; padding-left: 10px;}
     h5{color: cornflowerblue; padding-bottom: 5px;} /*중앙박스 외 상단에도 하나 있음*/
-    table td textarea{width: 500px; height: 170px; border-radius: 4px; resize: none; border: 1px solid #dbdbdb;}
-    table input[type=text]{width: 500px; height: 30px; border-radius: 4px; border: 1px solid #dbdbdb; }
-    table td span input[type=number]{width:200px; height: 30px;border-radius: 4px; margin-left: 20px;border: 1px solid #dbdbdb;}
-    table select{width: 200px; height: 30px;;border-radius: 4px; }
-    label{padding-left: 10px;}
+    #stepOne table td textarea{width: 500px; height: 170px; border-radius: 4px; resize: none; border: 1px solid #dbdbdb;}
+    #stepOne table input[type=text]{width: 500px; height: 30px; border-radius: 4px; border: 1px solid #dbdbdb; }
+    #stepOne table td span input[type=number]{width:200px; height: 30px;border-radius: 4px; margin-left: 20px;border: 1px solid #dbdbdb;}
+    #stepOne table select{width: 200px; height: 30px;;border-radius: 4px; }
+    #stepOne label{padding-left: 10px;}
 
     /*하단 버튼 css*/
     #btns{width:950px; text-align: right; margin-top: 20px; margin-bottom: 20px; margin-right: 20px;}
@@ -42,7 +50,7 @@
     #next{border: 1px solid #34538a; border-radius: 4px; font-size: 15px;}
     #next:hover{color: #34538a; background-color: white; font-weight: bold; border: 1px solid #34538a;}
     #next{color: white; background-color: #34538a;}
-</style>  
+</style>
 </head>
 <body>
 <div id="wrap">
@@ -56,10 +64,32 @@
         </div>
         <br clear="both">
         <div class="con" style="color:#000">
+            <span id="page_title">
+                <img src="${pageContext.request.contextPath}/resources/images/partner/집로고.jpg" style="vertical-align: middle;">
+                <p class="title_tt">체험관리상세</p>
+            </span><br>
+            <div id="comment">
+                <div style="text-align: center; margin-bottom: 20px;">
+                    <h2>체험 신청이 반려되었습니다.</h2>
+                </div>
+                <table>
+                    <tr>
+                        <td><p>거절사유</p></td>
+                        <td><input type="text" value="적절하지 못한 내용" readonly></td>
+                    </tr>
+                    <tr>
+                        <td><p>거절상세</p></td>
+                        <td><textarea name="" id="" readonly>사유입니다</textarea></td>
+                    </tr>
+                </table>
+                <p id="comment1">사유 확인 후 내용을 변경하여 다시 등록 요청을 해주세요. </p>
+            </div>
+            
             <div style="text-align: center;">
                 <span><h2>체험 정보 입력</h2></span>
                 <h5 style="margin-bottom: 50px;">안내에 따라 체험 내용을 정확하게 설명하여 주세요. /  상품 등록이 완료되면, 승인을 위한 심사가 진행됩니다. </h5>
             </div>
+            
             <div id="stepOne">
                 <table>
                     <tr>
@@ -193,7 +223,7 @@
             </div>
             <div id="btns">
                 <button id="cancle">취소하기</button>
-                <button id="next">등록하기</button>
+                <button id="next">재심사요청</button>
             </div>
         </div>
     </div>
