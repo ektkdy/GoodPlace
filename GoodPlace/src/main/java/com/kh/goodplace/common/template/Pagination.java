@@ -22,7 +22,7 @@ public class Pagination {
 			endPage = maxPage;
 		}
 		
-		return new PageInfo(listCount, currentPage, startPage, endPage, maxPage, pageLimit, boardLimit); // 왜 오류??? 모르겠네
+		return new PageInfo(listCount, currentPage, startPage, endPage, maxPage, pageLimit, boardLimit); //1 왜 오류??? 모르겠네
 	}
 	
 }
