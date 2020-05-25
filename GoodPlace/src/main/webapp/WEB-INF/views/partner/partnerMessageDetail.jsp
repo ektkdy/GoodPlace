@@ -76,14 +76,14 @@
                                         <tr class="other"> 
                                             <td width="80"><img src=""></td>
                                             <td class="chat">
-                                                방기남 
+                                                	방기남 
                                                 <p>숙소앞에 도착했는데 들어가도될까요?</p>
                                             </td>
                                         </tr>
                                         <tr class="me">
                                             <td width="80" style="float: right; margin-left:20px"><img src=""></td>
                                             <td class="chat">
-                                                나
+                                                	나
                                                 <p>네 들어오셔도되요~^^</p>
                                             </td>
                                         </tr>

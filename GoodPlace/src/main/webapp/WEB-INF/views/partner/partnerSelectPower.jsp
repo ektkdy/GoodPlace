@@ -82,8 +82,8 @@
                                         <option value="1200000">PLATINUM</option>
                                     </select>
                                 </td>
-                                <td><input type="text" class="result1 re" value="300000">원</td>
-                                <td><input type="text" class="result2 re" value="30">일</td>
+                                <td><input type="text" class="result1 re" id="" name="" value="300000">원</td>
+                                <td><input type="text" class="result2 re" id="" name="" value="30">일</td>
                                 <td><button type="button" class="apply" data-toggle="modal" data-target="#myModal">신청</button></td>
                             </tr>
                         </tbody>

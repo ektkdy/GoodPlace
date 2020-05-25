@@ -91,6 +91,8 @@
             </div>
             
             <div id="stepOne">
+            
+            <form action="" method="post">
                 <table>
                     <tr>
                         <th>* 활동강도</th>
@@ -148,21 +150,21 @@
                     <tr>
                         <th>* 게스트 준비물</th>
                         <td>
-                            <input type="text">
+                            <input type="text" id="" name="" value="">>
                             <input type="checkbox"><label>게스트가 준비할 사항이 전혀 없습니다.</label>
                         </td>
                     </tr>
                     <tr>
                         <th>* 대표 사진</th>
                         <td>
-                            <input type="file">
+                            <input type="file" id="" name="" value="">>
                             <h5>• 텍스트 및 로고가 있을 경우 관리자가 사진을 수정 혹은 삭제할 수 있습니다.</h5>
                         </td>
                     </tr>
                     <tr>
                         <th>* 상세 사진</th>
                         <td>
-                            <input type="file" value="사진등록">
+                            <input type="file" id="" name="" value="">
                             <h5>• 1장 이상의 상세 사진을 등록해주세요. 최대 10장까지 가능합니다.</h5>
                         </td>
                     </tr>
@@ -185,45 +187,49 @@
                         <th>* 요금 책정</th>
                         <td>
                             <span>1인 예약시 요금</span>
-                            <span><input type="number">원</span>
+                            <span><input type="number" id="" name="" value="">원</span>
                             <br><br>
 
                             <span>파트너 예상수익</span>
-                            <span><input type="number">원</span><br>
+                            <span><input type="number" id="" name="" value="">원</span><br>
                             <span></span>
                         </td>
                     </tr>
                     <tr>
                         <th>* 검토 후 제출</th>
                         <td>
-                            <input type="checkbox"><label>서비스 수수료에 동의합니다.</label>
+                            <input type="checkbox" id="" name="" value=""><label>서비스 수수료에 동의합니다.</label>
                             <p style="font-size: 15px;">
                                 굿플레이스는 각 예약당 요금의 20%에 해당하는 수수료를 받습니다. 
                                 모든 결제는 굿플레이스를 통해 진행되며 고객센터를 통한 24시간 지원과 함께 
                                 대부분의 체험에 대해 책임 보험도 제공하고 있습니다. 
                                 서비스 수수료에 대해 자세히 알아보세요.
                             </p>
-                            <input type="checkbox"><label>굿플레이스 회원만을 위한 체험을 진행합니다.</label>
+                            <input type="checkbox" id="" name="" value=""><label>굿플레이스 회원만을 위한 체험을 진행합니다.</label>
                             <p style="font-size: 15px;">
                                 굿플레이스를 통해 체험예약을 받는 날에는 
                                 굿플레이스 게스트만 체험예약을 진행해야만 합니다. 
                                 다른 플랫폼을 통해 예약하고 결제한 게스트는 별도로 체험 진행해야 합니다.
                             </p>
-                            <input type="checkbox"><label>굿플레이스의 안전관리 지침을 읽고 이해했으며 
+                            <input type="checkbox" id="" name="" value=""><label>굿플레이스의 안전관리 지침을 읽고 이해했으며 
                                 진행하는 체험이 지침을 준수함을 확인합니다.</label><br>
-                            <input type="checkbox"><label>현지가이드라인 및 현지 안전 법규를 준수하며 
+                            <input type="checkbox" id="" name="" value=""><label>현지가이드라인 및 현지 안전 법규를 준수하며 
                             이를 어길 시 굿플레이스 플랫폼에서 삭제될 수 있음을 이해합니다.</label><br>
-                            <input type="checkbox"><label>굿플레이스 체험 서비스와 게스트 환불 정책에 동의합니다.</label>
+                            <input type="checkbox"id="" name="" value=""><label>굿플레이스 체험 서비스와 게스트 환불 정책에 동의합니다.</label>
                             <br><br>
-                            <input type="checkbox"><label style="font-weight: bold; font-size: 18px;">전체 동의 후 체험 제출</label>
+                            <input type="checkbox" id="" name="" value=""><label style="font-weight: bold; font-size: 18px;">전체 동의 후 체험 제출</label>
                         </td>
                     </tr>
                 </table>
+                </form>
+                
+                
+                
                 <br>
             </div>
             <div id="btns">
                 <button id="cancle">취소하기</button>
-                <button id="next">재심사요청</button>
+                <button type="submit" id="next">재심사요청</button>
             </div>
         </div>
     </div>

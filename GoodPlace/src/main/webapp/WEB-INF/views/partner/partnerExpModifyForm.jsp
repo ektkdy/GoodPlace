@@ -66,6 +66,9 @@
             <div id="stepOne">
                 <div colspan="2" style="font-size: 22px; font-weight: bold; color: white; background-color: #34538a; height: 50px; padding-top: 15px; padding-left: 20px;"> 
                     1. 기본 정보</div>
+                    
+                    
+                <form action="" id="" name="">    
                 <table>
                     <tr>
                         <th>* 카테고리</th>
@@ -113,7 +116,7 @@
                     <tr>
                         <th>* 체험 제목</th>
                         <td>
-                            <input type="text">
+                            <input type="text" id="" name="" value="">>
                             <h5>• 정확하고 간결하게 표현해주세요. <br>
                                 • 지역명이 포함된 제목은 노출에 더 효과적입니다. <br>
                                 (도쿄, 산책하는 여행, 샌프란시스코 당일코드 등)</h5>
@@ -122,7 +125,7 @@
                     <tr>
                         <th>* 체험 소개</th>
                         <td>
-                            <textarea placeholder="체험 설명을 잘 작성하면 게스트의 예약과 참여를 유도할 수 있습니다.  &#13;&#10; 게스트를 위해 세심하게 고안한 체험 일정의 자세한 내용을 알려주세요. &#13;&#10; &#13;&#10;* 체험을 처음부터 끝까지 실제 진행 순서대로 설명해 주세요.&#13;&#10;- 게스트가 참여하게 될 체험활동을 구체적으로 설명하기&#13;&#10;- 게스트가 일정을 충분히 이해할 수 있도록 일정을 상세하게 설명하기"></textarea>
+                            <textarea id="" name="" placeholder="체험 설명을 잘 작성하면 게스트의 예약과 참여를 유도할 수 있습니다.  &#13;&#10; 게스트를 위해 세심하게 고안한 체험 일정의 자세한 내용을 알려주세요. &#13;&#10; &#13;&#10;* 체험을 처음부터 끝까지 실제 진행 순서대로 설명해 주세요.&#13;&#10;- 게스트가 참여하게 될 체험활동을 구체적으로 설명하기&#13;&#10;- 게스트가 일정을 충분히 이해할 수 있도록 일정을 상세하게 설명하기"></textarea>
                         </td>
                     </tr>
                     <tr>
@@ -192,21 +195,21 @@
                     <tr>
                         <th>* 게스트 준비물</th>
                         <td>
-                            <input type="text">
-                            <input type="checkbox"><label>게스트가 준비할 사항이 전혀 없습니다.</label>
+                            <input type="text" id="" name="" value="">
+                            <input type="checkbox" id="" name="" value=""><label>게스트가 준비할 사항이 전혀 없습니다.</label>
                         </td>
                     </tr>
                     <tr>
                         <th>* 대표 사진</th>
                         <td>
-                            <input type="file">
+                            <input type="file" id="" name="" value="">
                             <h5>• 텍스트 및 로고가 있을 경우 관리자가 사진을 수정 혹은 삭제할 수 있습니다.</h5>
                         </td>
                     </tr>
                     <tr>
                         <th>* 상세 사진</th>
                         <td>
-                            <input type="file" value="사진등록">
+                            <input type="file" id="" name="" value="">
                             <h5>• 1장 이상의 상세 사진을 등록해주세요. 최대 10장까지 가능합니다.</h5>
                         </td>
                     </tr>
@@ -226,7 +229,11 @@
                         </td>
                     </tr>
                 </table>
-                <br>
+            </form>
+            
+            
+            
+            <br>
             </div>
             <div id="btns">
                 <span>
@@ -235,7 +242,7 @@
                 <div style="text-align:right; margin-top: -40px;">
                     <button id="delete" >삭제하기</button>
                     <button id="rest" >휴면하기</button>
-                    <button id="modify">수정하기</button>
+                    <button type="submit" id="modify">수정하기</button>
                 </div>
             </div>
         </div>
