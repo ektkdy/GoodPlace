@@ -6,7 +6,7 @@
 <head>
 <meta charset="UTF-8">
 <title>Insert title here</title>
-<link rel="stylesheet" type="text/css" href="${ pageContext.servletContext.contextPath }/resources/css/partner/partjerReservationList.css" />
+<link rel="stylesheet" type="text/css" href="${ pageContext.servletContext.contextPath }/resources/css/partner/partnerReservationList.css" />
 </head>
 <body>
  <div id="wrap">
@@ -29,7 +29,7 @@
                 </a>
             </div>
             <div class="con" style="color:#000">
-                <span id="page_title"><img src="../image/집로고.jpg" style="vertical-align: middle;"><p class="title_tt">진행중인예약(0)</p></span>
+                <span id="page_title"><img src="${ pageContext.servletContext.contextPath }/resources/images/homelogo.jpg" style="vertical-align: middle;"><p class="title_tt">진행중인예약(0)</p></span>
                 <br clear="both">
                 <div class="choose_area"style="clear: both;">
                     <select class="select_st">
@@ -71,7 +71,6 @@
                 </div>
             </div>
         </div>
-        <div id="footer">footer</div>
     </div>
 
     <script>
