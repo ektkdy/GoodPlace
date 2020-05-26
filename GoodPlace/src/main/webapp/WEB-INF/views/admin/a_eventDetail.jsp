@@ -1,10 +1,14 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
 <meta charset="UTF-8">
+<title>Insert title here</title>
 <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100;300;400;500;700;900&display=swap" rel="stylesheet">
 <script src="http://code.jquery.com/jquery-1.11.3.min.js"></script>
-<link rel="stylesheet" type="text/css" href="../admin_css/a_common.css" />
+<link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/resources/css/admin/adminCommon.css" />
 <style>
     /*공통*/
     /* font */
@@ -16,10 +20,6 @@
     /* body css */
     body {background: #fff;}
     #wrap {width: 1200px; height: 900px; margin: 0 auto; font-size: 18px; color: #fff; text-align: center; text-transform: uppercase; }
-
-    .lt_tab{border-radius: 0px;}
-    .mid_tab{border-radius: 0px;}
-    .gt_tab{border-radius: 0px;}
     
     /* table */
     
@@ -35,7 +35,7 @@
     #gotoList{background-color: white; color: black;}
     #gotoList:hover{color: white; background-color: #34538a; font-weight: bold; border: 1px solid #34538a;}
     /*모든 버튼*/
-    button{cursor: pointer; width: 140px; height: 35px; border-radius: 6px; border: 1px solid #34538a; background-color: #34538a; color: #fff;}
+    button{cursor: pointer; width: 140px; height: 35px; margin-right: 20px; border-radius: 6px; border: 1px solid #34538a; background-color: #34538a; color: #fff;}
     button:hover{color: #34538a; background-color: white; font-weight: bold; border: 1px solid #34538a;}
 
     #searchSelect{
@@ -75,66 +75,46 @@
         border:1px solid #777;
     }
 
+    .con{margin-right: 30px;}
 
-</style>        
+</style>  
 </head>
 <body>
     <div id="wrap">
-        <div id="header">
-            <span id="gotomain">
-                <a href="#"><img src="../image/배경없는_굿플로고.png" id="logo" alt="logo" ><p class="title_name">관리자</p></a>
-            </span>
-            <span id="p_info">
-                <a href="#" style="float:left; "><img src="#" class="userphoto"><p>나관리</p></a><img src="../image/arrow.png" class="arrow">
-            </span>
-            <div id="slide_menu">
-                <ul>
-                    <li><a href="#">사용자페이지 가기</a></li>
-                    <li><a href="#">로그아웃</a></li>
-                </ul>
-            </div>
-        </div>
-        <div id="sidenav">
-            <ul>
-                <li><a href="#"><span class="icon1"></span><p>대시보드</p></a></li>
-                <li><a href="#"><span class="icon2"></span><p>회원관리</p></a></li>
-                <li><a href="#"><span class="icon3"></span><p>신고관리</p></a></li>
-                <li><a href="#"><span class="icon4"></span><p>후기관리</p></a></li>
-                <li><a href="#"><span class="icon5"></span><p>파트너관리</p></a></li>
-                <li><a href="#"><span class="icon6"></span><p>파워등록</p></a></li>
-                <li><a href="#"><span class="icon7"></span><p>게시글관리</p></a></li>
-                <li><a href="#"><span class="icon8"></span><p>정산관리</p></a></li>
-                <li><a href="#"><span class="icon9"></span><p>메세지</p></a></li>
-                <li><a href="#"><span class="icon10"></span><p>1:1문의관리</p></a></li>
-                <li><a href="#"><span class="icon11"></span><p>숙소관리</p></a></li>
-                <li><a href="#"><span class="icon12"></span><p>체험관리</p></a></li>
-            </ul>
-        </div>
-        <div id="contents" >
-            <div id="tab">
-                <button class="off lt_tab">FAQ관리</button>
-                <button class="off mid_tab">이벤트관리</button>
-                <button class="on gt_tab">공지사항관리</button>
-            </div>
-            <div class="sitemap">
-                <a href="#"><span style="width: 30px;height: 30px;">공지사항등록</span></a>
-            </div>
-            <div class="con" style="color:#000">
-                <span id="page_title"><img src="../image/집로고.jpg" style="vertical-align: middle;"><p class="title_tt">공지사항등록</p></span>
+
+		<jsp:include page="../common/adminMenubar.jsp"/>
+
+        <div id="contents" style="width:980px">
+            <div id="tab"></div>
+            <div class="sitemap"><a href="#"><span style="width: 30px;height: 30px;">이벤트상세</span></a></div>
+            <div class="con" style="color:#000;">
+                <span id="page_title"><img src="${pageContext.request.contextPath}/resources/images/admin/집로고.jpg" style="vertical-align: middle;"><p class="title_tt">이벤트상세</p></span>
                                 <div class="con2">
                     <table class="common_tb" cellpadding="0" cellspacing="0" >
                         <thead>
                             <tr>
                                 <td width="150px">제목</td>
-                                <td colspan="3" style="background: white; text-align: left; padding-left: 5%;"><input type="text" name="faqInsert" style="width:720px; height:25px; padding-left: 10px;"></td>
+                                <td colspan="3" style="background: white; text-align: left; padding-left: 5%;"><input type="text" name="faqInsert" value="포인트 지급" style="width:720px; height:25px; padding-left: 10px;"></td>
+                            </tr>
+                            <tr>
+                                <td width="150px">시작일</td>
+                                <td style="background: white; text-align: left; padding-left: 5%;">
+                                    <input type="text" name="faqInsert" style="width:200px; height:25px;">
+                                    <img src="${pageContext.request.contextPath}/resources/images/admin/calendar1.png" style="vertical-align: middle; width:35px; height:35px; margin-left: 10%;">
+                                </td>
+                                <td width="100px">종료일</td>
+                                <td style="background: white; text-align: left; padding-left: 5%;">
+                                    <input type="text" name="faqInsert" style="width:200px; height:25px;">
+                                    <img src="${pageContext.request.contextPath}/resources/images/admin/calendar1.png" style="vertical-align: middle; width:35px; height:35px; margin-left: 10%;">
+                                </td>
                             </tr>
 
                         </thead>
                         <tbody>
                             <tr>
-                                <td width="200px" style="background: #dbdbdb; font-size: 18px;">내용</td>
-                                <td colspan="5" style="padding-left: 5%;">
-                                    <textarea name="" id="" style="padding-left: 10px; border:1px solid #bebebe;"></textarea>
+                                <td width="150px" style="background: #c1d9f0; font-size: 18px;">내용</td>
+                                <td colspan="3" style="padding-left: 5%;">
+                                    <textarea name="" id="" style="padding-left: 10px; border:1px solid #bebebe;">안녕하세요 반갑습니다.</textarea>
                                 </td>
                             </tr>
                             <tr class="file_input">
@@ -147,20 +127,19 @@
                                         
                                     </div>
                                 </td>
-                                <td colspan="3" style="background: white; text-align: left; padding-left: 5%;"><input type="text" readonly="readonly" title="File Route" id="file_route"></td>
+                                <td colspan="3" style="background: white; text-align: left; padding-left: 5%;"><input type="text" readonly="readonly" value="이벤트.jsp" title="File Route" id="file_route"></td>
                             </tr>
                         </tbody>
                     </table>
                     <br>
                     <div style="text-align: right;">
                         <button id="gotoList">목록으로</button>
-                        <button class="blue_btn" >등록하기</button>
+                        <button class="blue_btn" >수정하기</button>
                     </div>
 
                 </div>
             </div>
         </div>
-        <div id="footer">footer</div>
     </div>
 
     <script>

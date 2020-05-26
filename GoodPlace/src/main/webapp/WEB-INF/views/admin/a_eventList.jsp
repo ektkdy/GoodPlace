@@ -1,10 +1,14 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
 <meta charset="UTF-8">
+<title>Insert title here</title>
 <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100;300;400;500;700;900&display=swap" rel="stylesheet">
 <script src="http://code.jquery.com/jquery-1.11.3.min.js"></script>
-<link rel="stylesheet" type="text/css" href="../admin_css/a_common.css" />
+<link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/resources/css/admin/adminCommon.css" />
 <style>
     /*공통*/
     /* font */
@@ -85,40 +89,13 @@
     }
     
 
-</style>        
+</style>     
 </head>
 <body>
     <div id="wrap">
-        <div id="header">
-            <span id="gotomain">
-                <a href="#"><img src="../image/배경없는_굿플로고.png" id="logo" alt="logo" ><p class="title_name">관리자</p></a>
-            </span>
-            <span id="p_info">
-                <a href="#" style="float:left; "><img src="#" class="userphoto"><p>나관리</p></a><img src="../image/arrow.png" class="arrow">
-            </span>
-            <div id="slide_menu">
-                <ul>
-                    <li><a href="#">사용자페이지 가기</a></li>
-                    <li><a href="#">로그아웃</a></li>
-                </ul>
-            </div>
-        </div>
-        <div id="sidenav">
-            <ul>
-                <li><a href="#"><span class="icon1"></span><p>대시보드</p></a></li>
-                <li><a href="#"><span class="icon2"></span><p>회원관리</p></a></li>
-                <li><a href="#"><span class="icon3"></span><p>신고관리</p></a></li>
-                <li><a href="#"><span class="icon4"></span><p>후기관리</p></a></li>
-                <li><a href="#"><span class="icon5"></span><p>파트너관리</p></a></li>
-                <li><a href="#"><span class="icon6"></span><p>파워등록</p></a></li>
-                <li><a href="#"><span class="icon7"></span><p><strong>게시글관리></strong></p></a></li>
-                <li><a href="#"><span class="icon8"></span><p>정산관리</p></a></li>
-                <li><a href="#"><span class="icon9"></span><p>메세지</p></a></li>
-                <li><a href="#"><span class="icon10"></span><p>1:1문의관리</p></a></li>
-                <li><a href="#"><span class="icon11"></span><p>숙소관리</p></a></li>
-                <li><a href="#"><span class="icon12"></span><p>체험관리</p></a></li>
-            </ul>
-        </div>
+
+		<jsp:include page="../common/adminMenubar.jsp"/>
+
         <div id="contents" >
             <div id="tab">
                 <button class="off lt_tab">FAQ관리</button>
@@ -129,7 +106,7 @@
                 <a href="#"><span style="width: 30px;height: 30px;">이벤트관리</span></a>
             </div>
             <div class="con" style="color:#000">
-                <span id="page_title"><img src="../image/집로고.jpg" style="vertical-align: middle;"><p class="title_tt">이벤트관리</p></span>
+                <span id="page_title"><img src="${pageContext.request.contextPath}/resources/images/admin/집로고.jpg" style="vertical-align: middle;"><p class="title_tt">이벤트관리</p></span>
                 <span class="up_btn_space">
                     <select name="" id="searchSelect" style="width:100px; height:35px;">
                         <option value="">제목</option>
@@ -147,7 +124,7 @@
                                     <div class="eventDiv" style="width: 250px; height:200px; border:1px solid black;">
                                         <div id="event-img" class="event-img" >
                                             <input type="hidden" value="">
-                                            <img src= "../image/1234.png" alt="">
+                                            <img src= "${pageContext.request.contextPath}/resources/images/admin/1234.png" alt="">
                                         </div>
                                         <span>추천을 하면 포인트를 드려요!</span><br>
                                         <span>2020.05.01-2020.06.20</span>
@@ -158,7 +135,7 @@
                                     <div class="eventDiv" style="width: 250px; height:200px; border:1px solid black;">
                                         <div id="event-img" class="event-img" >
                                             <input type="hidden" value="">
-                                            <img src= "../image/1234.png" alt="">
+                                            <img src= "${pageContext.request.contextPath}/resources/images/admin/1234.png" alt="">
                                         </div>
                                         <span>추천을 하면 포인트를 드려요!</span><br>
                                         <span>2020.05.01-2020.06.20</span>
@@ -169,7 +146,7 @@
                                     <div class="eventDiv" style="width: 250px; height:200px; border:1px solid black;">
                                         <div id="event-img" class="event-img" >
                                             <input type="hidden" value="">
-                                            <img src= "../image/1234.png" alt="">
+                                            <img src= "${pageContext.request.contextPath}/resources/images/admin/1234.png" alt="">
                                         </div>
                                         <span>추천을 하면 포인트를 드려요!</span><br>
                                         <span>2020.05.01-2020.06.20</span>
@@ -182,7 +159,7 @@
                                     <div class="eventDiv" style="width: 250px; height:200px; border:1px solid black;">
                                         <div id="event-img" class="event-img" >
                                             <input type="hidden" value="">
-                                            <img src= "../image/1234.png" alt="">
+                                            <img src= "${pageContext.request.contextPath}/resources/images/admin/1234.png" alt="">
                                         </div>
                                         <span>추천을 하면 포인트를 드려요!</span><br>
                                         <span>2020.05.01-2020.06.20</span>
@@ -193,7 +170,7 @@
                                     <div class="eventDiv" style="width: 250px; height:200px; border:1px solid black;">
                                         <div id="event-img" class="event-img" >
                                             <input type="hidden" value="">
-                                            <img src= "../image/1234.png" alt="">
+                                            <img src= "${pageContext.request.contextPath}/resources/images/admin/1234.png" alt="">
                                         </div>
                                         <span>추천을 하면 포인트를 드려요!</span><br>
                                         <span>2020.05.01-2020.06.20</span>
@@ -204,7 +181,7 @@
                                     <div class="eventDiv" style="width: 250px; height:200px; border:1px solid black;">
                                         <div id="event-img" class="event-img" >
                                             <input type="hidden" value="">
-                                            <img src= "../image/1234.png" alt="">
+                                            <img src= "${pageContext.request.contextPath}/resources/images/admin/1234.png" alt="">
                                         </div>
                                         <span>추천을 하면 포인트를 드려요!</span><br>
                                         <span>2020.05.01-2020.06.20</span>
@@ -236,7 +213,6 @@
                 </div>
             </div>
         </div>
-        <div id="footer">footer</div>
     </div>
 
     <script>

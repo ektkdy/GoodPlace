@@ -1,10 +1,14 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
 <meta charset="UTF-8">
+<title>Insert title here</title>
 <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100;300;400;500;700;900&display=swap" rel="stylesheet">
 <script src="http://code.jquery.com/jquery-1.11.3.min.js"></script>
-<link rel="stylesheet" type="text/css" href="../admin_css/a_common.css" />
+<link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/resources/css/admin/adminCommon.css" />
 <style>
     /*공통*/
     /* font */
@@ -15,14 +19,21 @@
     a {color: #333333; text-decoration: none;}
     /* body css */
     body {background: #fff;}
-    #wrap {width: 1200px; margin: 0 auto; height: 900px; margin: 0 auto; font-size: 18px; color: #fff; text-align: center; text-transform: uppercase; }
-    /* 파트너 관리 */
+    #wrap {width: 1200px; height: 900px; margin: 0 auto; font-size: 18px; color: #fff; text-align: center; text-transform: uppercase; }
+    
+    /*모든 버튼*/
+    button{cursor: pointer; width: 140px; height: 35px; border-radius: 6px; border: 1px solid #34538a; background-color: #34538a; color: #fff;}
+    button:hover{color: #34538a; background-color: white; font-weight: bold; border: 1px solid #34538a;}
+    .modifiyBtn{width:70px;}
+
+    /* 회원 관리 */
     #searchInput{
         border:1px solid #dbdbdb;
         border-top-left-radius: 6px;
         border-bottom-left-radius: 6px;
     }
     .search_btn{
+        border-radius: 0px;
         background-color: #184c88; 
         color:#fff; 
         width: 100px; 
@@ -43,69 +54,38 @@
     #pagingArea{width: 680px; text-align: right;}
     #pagingArea a{padding-left:12px; padding-right: 12px; padding-top: 5px; padding-bottom: 5px;border: 1px solid #dbdbdb; cursor: pointer;}
     #pagingArea a:hover{color: white; background-color: #34538a;}
-</style>        
+</style>  
 </head>
 <body>
     <div id="wrap">
-        <div id="header">
-            <span id="gotomain">
-                <a href="#"><img src="../image/배경없는_굿플로고.png" id="logo" alt="logo" ><p class="title_name">관리자</p></a>
-            </span>
-            <span id="p_info">
-                <a href="#" style="float:left; "><img src="#" class="userphoto"><p>나관리</p></a><img src="../image/arrow.png" class="arrow">
-            </span>
-            <div id="slide_menu">
-                <ul>
-                    <li><a href="#">사용자페이지 가기</a></li>
-                    <li><a href="#">로그아웃</a></li>
-                </ul>
-            </div>
-        </div>
-        <div id="sidenav">
-            <ul>
-                <li><a href="#"><span class="icon1"></span><p>대시보드</p></a></li>
-                <li><a href="#"><span class="icon2"></span><p>회원관리</p></a></li>
-                <li><a href="#"><span class="icon3"></span><p>신고관리</p></a></li>
-                <li><a href="#"><span class="icon4"></span><p>후기관리</p></a></li>
-                <li><a href="#"><span class="icon5"></span><p>파트너관리</p></a></li>
-                <li><a href="#"><span class="icon6"></span><p>파워등록</p></a></li>
-                <li><a href="#"><span class="icon7"></span><p>게시글관리</p></a></li>
-                <li><a href="#"><span class="icon8"></span><p>정산관리</p></a></li>
-                <li><a href="#"><span class="icon9"></span><p>메세지</p></a></li>
-                <li><a href="#"><span class="icon10"></span><p>1:1문의관리</p></a></li>
-                <li><a href="#"><span class="icon11"></span><p>숙소관리</p></a></li>
-                <li><a href="#"><span class="icon12"></span><p>체험관리</p></a></li>
-            </ul>
-        </div>
+		<jsp:include page="../common/adminMenubar.jsp"/>
+
         <div id="contents" style="width:980px">
             <div id="tab"></div>
-            <div class="sitemap"><a href="#"><span style="width: 30px;height: 30px;">파트너관리</span></a></div>
+            <div class="sitemap"><a href="#"><span style="width: 30px;height: 30px;">회원관리</span></a></div>
             <div class="con" style="color:#000">
-                <span id="page_title"><img src="../image/집로고.jpg" style="vertical-align: middle;"><p class="title_tt">파트너목록<small style="font-size: 0.5em;">(총 회원수 0명)검색결과 0건</small></p></span>
+                <span id="page_title"><img src="${pageContext.request.contextPath}/resources/images/admin/집로고.jpg" style="vertical-align: middle;"><p class="title_tt">회원관리<small style="font-size: 0.5em;">(총 회원수 0명)검색결과 0건</small></p></span>
                 <span class="up_btn_space">
                     <select name="" id="searchSelect" style="width:100px; height:35px;">
                         <option value="">선택</option>
                         <option value="">이름</option>
-                        <option value="">파트너번호</option>
-                        <option value="">파트너타입</option>
-                    </select>
+                        <option value="">회원번호</option>
+                        <option value="">회원타입</option>
+                  </select>
                     <input id="searchInput" type="search" style="width:200px; height:35px;"><button class="search_btn">검색</button>
                 </span>
-                
                 <div class="con2">
                     <table class="common_tb" cellpadding="0" cellspacing="0">
                         <thead>
                             <tr>
                                 <td width="100"><input type="checkbox"></td>
-                                <td width="150">파트너번호</td>
+                                <td width="150">회원번호</td>
                                 <td width="200">이름</td>
                                 <td width="200">아이디</td>
                                 <td width="200">등록일</td>
                                 <td width="300">휴대전화</td>
-                                <td width="150">파트너타입</td>
-                                <td width="150">숙소</td>
-                                <td width="150">체험</td>
-
+                                <td width="150">회원타입</td>
+                                <td width="150">경고횟수</td>
                             </tr>
                         </thead>
                         <tbody>
@@ -118,7 +98,6 @@
                                 <td>010-9999-9999</td>
                                 <td>Y</td>
                                 <td>0</td>
-                                <td>0</td>
                             </tr>
                             <tr>
                                 <td><input type="checkbox"></td>
@@ -129,8 +108,6 @@
                                 <td>010-9999-9999</td>
                                 <td>Y</td>
                                 <td>0</td>
-                                <td>0</td>
-
                             </tr>
                             <tr>
                                 <td><input type="checkbox"></td>
@@ -141,8 +118,6 @@
                                 <td>010-9999-9999</td>
                                 <td>Y</td>
                                 <td>0</td>
-                                <td>0</td>
-
                             </tr>
                         </tbody>
                     </table>
@@ -163,13 +138,15 @@
                                 <a>&gt;</a>
                             </div>
                         </th>
-
+    
                     </table>
-
+    
                 </div>
             </div>
+
+            
+            
         </div>
-        <div id="footer">footer</div>
     </div>
 
     <script>
