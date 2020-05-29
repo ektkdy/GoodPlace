@@ -6,9 +6,7 @@
 	</settings>	
 	
 	<typeAliases>
-		<!-- 별칭등록
-		<typeAlias type="com.kh.spring.member.model.vo.Member" alias="Member"/>
-		 -->
+		<typeAlias type="com.kh.goodplace.member.model.vo.Member" alias="Member"/>
 	</typeAliases>
 	
 	

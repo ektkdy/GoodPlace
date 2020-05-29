@@ -7,7 +7,7 @@
 <head>
 <meta charset="UTF-8">
 <title>Insert title here</title>
-
+<script src="resources/js/jquery-3.4.1.min.js"></script>
 <style>
 	body{
 		margin:0px;
@@ -205,7 +205,7 @@
     <div id="header">
         <div id="header_wrap">
             <div id="header_1">
-                <a href=""><img id="home-logo" src="resources/images/user/menubarLogo.png" width="250px" height="40px" style="padding:10px"></a>
+                <a href="${pageContext.servletContext.contextPath}"><img id="home-logo" src="resources/images/user/menubarLogo.png" width="250px" height="40px" style="padding:10px"></a>
             </div>
             <div id="header_2">
                 <ul id="navi" style="padding-left: 30px; margin-top: 10px">
@@ -225,7 +225,7 @@
                         <a class="list qBtn" href="" style="font-size: 15px; margin-left: 50px;">1:1채팅상담</a>
                     </li>
                     <li style="margin-top: 10px;">
-                        <a href="#" class="list loginBtn" style="margin-left: 30px;">로그인</a>
+                        <a href="loginForm.me" class="list loginBtn" style="margin-left: 30px;">로그인</a>
                     </li>
 
                     <!-- 로그인 후 -->

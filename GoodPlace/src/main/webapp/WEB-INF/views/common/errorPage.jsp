@@ -9,7 +9,8 @@
 <title>Insert title here</title>
 </head>
 <body>
- 	<jsp:include page="menubar.jsp"/>
+ 	<!-- header -->
+	<jsp:include page="menubar.jsp"/>
 
     <br>
     <div align="center">	

@@ -188,7 +188,6 @@
 		</dependency>
 		
 		<!-- 2. 스프링 시큐리티 모듈 관련한 라이브러리 (core, web, config -->
-
 		<dependency>
 		    <groupId>org.springframework.security</groupId>
 		    <artifactId>spring-security-core</artifactId>
