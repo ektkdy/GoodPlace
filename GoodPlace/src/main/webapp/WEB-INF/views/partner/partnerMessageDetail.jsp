@@ -43,6 +43,12 @@
     #pagingArea{width: 980px; text-align: right;}
     #pagingArea a{padding-left:12px; padding-right: 12px; padding-top: 5px; padding-bottom: 5px;border: 1px solid #dbdbdb; cursor: pointer;}
     #pagingArea a:hover{color: white; background-color: #34538a;}
+    
+    /*하단 버튼 css*/
+    button{cursor: pointer;  width: 140px; height: 35px; }
+    .gotoList{border: 1px solid #dbdbdb; border-radius: 4px; font-size: 15px;}
+    .gotoList:hover{background-color: white; border: solid 1px #dbdbdb;}
+    
 </style>        
 </head>
 <body>
@@ -65,7 +71,7 @@
                 <table class="message_tb">
                     <thead>
                         <tr>
-                            <td colspan="2"><img src="image/step_icon3.png" width="30px" height="30px" >방기남 님과의 대화</td>
+                            <td colspan="2"><img src="${pageContext.request.contextPath}/resources/images/partner/step_icon3.png" width="30px" height="30px" >방기남 님과의 대화</td>
                         </tr>
                     </thead>
                     <tbody id="chat_area">
@@ -101,6 +107,7 @@
                         </tr>
                     </tfoot>
                 </table>
+                <button class="gotoList" style="margin-left:400px;">목록으로</button>
             </div>
         </div>
     </div>

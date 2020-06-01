@@ -9,6 +9,7 @@
 <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100;300;400;500;700;900&display=swap" rel="stylesheet">
 <script src="http://code.jquery.com/jquery-1.11.3.min.js"></script>
 <link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/resources/css/partner/partnerCommon.css" />
+<script src="https://t1.daumcdn.net/mapjsapi/bundle/postcode/prod/postcode.v2.js"></script>
 <style>
     /*공통*/
     /* font */
@@ -25,12 +26,15 @@
     /* 중앙 박스(div#stepOne) 내부공통 css */
     #stepOne{width:950px; border: 1px solid #dbdbdb;}
     table th{width: 200px; padding-top: 30px; padding-left: 70px; vertical-align: top;}
-    table td{width:500px; padding-top: 30px; padding-left: 50px;}
-    table td label{font-size: 15px; padding-left: 10px;}
+    table td{width:500px; padding-top: 30px; padding-left: 50px; font-size:13px;}
     h5{color: cornflowerblue; padding-bottom: 5px;} /*중앙박스 외 상단에도 하나 있음*/
     table td textarea{width: 500px; height: 170px; border-radius: 4px; resize: none; border: 1px solid #dbdbdb;}
-    table input[type=text]{width: 500px; border-radius: 4px; height: 30px; border: 1px solid #dbdbdb;}
-    table select{width: 200px; height: 30px;border-radius: 4px;}
+    table input[type=radio]{margin-right:5px;}
+    table input[type=checkbox]{margin-right:5px;}
+    table input[type=text]{width: 500px; height: 30px; border-radius: 4px; border: 1px solid #dbdbdb;}
+    table td span input[type=number]{width:200px; height: 30px;border-radius: 4px; margin-left: 20px;border: 1px solid #dbdbdb;}
+    table select{width: 200px; height: 30px; border-radius: 4px;}
+    .maxPeople {width: 200px; height: 30px; border-radius: 4px; border: 1px solid #dbdbdb; padding-left: 5px;}
 
     /*하단 버튼 css*/
     #btns{width:950px; margin-top: 20px; margin-bottom: 20px; margin-right: 20px;}
@@ -116,7 +120,7 @@
                     <tr>
                         <th>* 체험 제목</th>
                         <td>
-                            <input type="text" id="" name="" value="">>
+                            <input type="text" id="" name="" value="">
                             <h5>• 정확하고 간결하게 표현해주세요. <br>
                                 • 지역명이 포함된 제목은 노출에 더 효과적입니다. <br>
                                 (도쿄, 산책하는 여행, 샌프란시스코 당일코드 등)</h5>
@@ -131,7 +135,12 @@
                     <tr>
                         <th>* 체험 장소</th>
                         <td>
-                                다음주소 api사용
+	                        <input type="text" id="del_postcode" name="address1" placeholder="우편번호" style="width:100px; height:25px; padding-left:5px; margin-bottom:5px;" readonly>
+							<input type="button" id="searchAdressBtn" onclick="del_execDaumPostcode()" value="우편번호 찾기" style="width: 100px; height:25px; background-color: #34538a; color:#fff; border:1px solid #34538a; border-radius:4px;" readonly><br>
+	                        <input type="text" id="del_address" name="address2" placeholder="주소" style="width:320px; height:25px; padding-left:5px; margin-bottom:5px;" readonly>											
+							<input type="text" id="del_extraAddress" name="address3" placeholder="참고항목" style="width:150px; height:25px; padding-left:5px; margin-bottom:5px;" readonly>
+							<!-- 사용자가 직접 입력하는 칸  -->
+							<input type="text" id="del_detailAddress"  name="address4" placeholder="상세주소" style="width:480px; height:25px; padding-left:5px;"> 
                         </td>
                     </tr>
                 </table>
@@ -151,22 +160,15 @@
                     <tr>
                         <th>* 최대 인원수</th>
                         <td>
-                            <h5>• 최소 인원수는 1명입니다.</h5>
-                            <select name="people" id="people">
-                                <option value="1">1명</option>
-                                <option value="2">2명</option>
-                                <option value="3">3명</option>
-                                <option value="4">4명</option>
-                                <option value="5">5명</option>
-                                <option value="6">6명</option>
-                            </select>
+                            <input type="number" class="maxPeople">
+							<h5>• 최소 인원수는 1명입니다. 한 회차당 운영 가능한 최대인원수를 입력하세요.</h5>
                         </td>
                     </tr>
                     <tr>
                         <th>* 체험 시간</th>
                         <td>
-                            <select name="expStartTime" id="expStartTime">
-                                <option>체험 시작시간 선택</option>
+                            <select name="expStartTime" id="expStartTime" style="margin-bottom: 5px; margin-right: 5px;">
+                                <option>운영 시작시간 선택</option>
                                 <option value="10">오전 10시</option>
                                 <option value="11">오전 11시</option>
                                 <option value="12">오후 12시</option>
@@ -180,7 +182,22 @@
                                 <option value="20">오후 20시</option>
                                 <option value="21">오후 21시</option>
                             </select>
-                            <select name="expTime" id="expTime">
+                            <select name="expEndTime" id="expEndTime">
+                                <option>운영 끝 시간 선택</option>
+                                <option value="10">오전 10시</option>
+                                <option value="11">오전 11시</option>
+                                <option value="12">오후 12시</option>
+                                <option value="13">오후 13시</option>
+                                <option value="14">오후 14시</option>
+                                <option value="15">오후 15시</option>
+                                <option value="16">오후 16시</option>
+                                <option value="17">오후 17시</option>
+                                <option value="18">오후 18시</option>
+                                <option value="19">오후 19시</option>
+                                <option value="20">오후 20시</option>
+                                <option value="21">오후 21시</option>
+                            </select>
+                            <select name="expTime" id="expTime" style="margin-bottom: 5px; margin-right: 5px;">
                                 <option>소요시간 선택</option>
                                 <option value="1">1시간 소요</option>
                                 <option value="2">2시간 소요</option>
@@ -188,6 +205,14 @@
                                 <option value="4">4시간 소요</option>
                                 <option value="5">5시간 소요</option>
                                 <option value="6">6시간 소요</option>
+                            </select>
+                            <select name="expTime" id="expTime">
+                                <option>체험 간격 선택</option>
+                                <option value="30">30분마다 운영</option>
+                                <option value="60">1시간마다 운영</option>
+                                <option value="90">1시간 30분마다 운영</option>
+                                <option value="120">2시간마다 운영</option>
+                                <option value="150">2시간 30분마다 운영</option>
                             </select>
                             
                         </td>
@@ -248,5 +273,55 @@
         </div>
     </div>
 </div>
+<script>
+   function del_execDaumPostcode() {
+       new daum.Postcode({
+           oncomplete: function(data) {
+               // 팝업에서 검색결과 항목을 클릭했을때 실행할 코드를 작성하는 부분.
+
+               // 각 주소의 노출 규칙에 따라 주소를 조합한다.
+               // 내려오는 변수가 값이 없는 경우엔 공백('')값을 가지므로, 이를 참고하여 분기 한다.
+               var addr = ''; // 주소 변수
+               var extraAddr = ''; // 참고항목 변수
+
+               //사용자가 선택한 주소 타입에 따라 해당 주소 값을 가져온다.
+               if (data.userSelectedType === 'R') { // 사용자가 도로명 주소를 선택했을 경우
+                   addr = data.roadAddress;
+               } else { // 사용자가 지번 주소를 선택했을 경우(J)
+                   addr = data.jibunAddress;
+               }
+
+               // 사용자가 선택한 주소가 도로명 타입일때 참고항목을 조합한다.
+               if(data.userSelectedType === 'R'){
+                   // 법정동명이 있을 경우 추가한다. (법정리는 제외)
+                   // 법정동의 경우 마지막 문자가 "동/로/가"로 끝난다.
+                   if(data.bname !== '' && /[동|로|가]$/g.test(data.bname)){
+                       extraAddr += data.bname;
+                   }
+                   // 건물명이 있고, 공동주택일 경우 추가한다.
+                   if(data.buildingName !== '' && data.apartment === 'Y'){
+                       extraAddr += (extraAddr !== '' ? ', ' + data.buildingName : data.buildingName);
+                   }
+                   // 표시할 참고항목이 있을 경우, 괄호까지 추가한 최종 문자열을 만든다.
+                   if(extraAddr !== ''){
+                       extraAddr = ' (' + extraAddr + ')';
+                   }
+                   // 조합된 참고항목을 해당 필드에 넣는다.
+                   document.getElementById("del_extraAddress").value = extraAddr;
+               
+               } else {
+                   document.getElementById("del_extraAddress").value = '';
+               }
+
+               // 우편번호와 주소 정보를 해당 필드에 넣는다.
+               document.getElementById('del_postcode').value = data.zonecode;
+               document.getElementById("del_address").value = addr;
+               // 커서를 상세주소 필드로 이동한다.
+               document.getElementById("del_detailAddress").focus();
+           }
+       }).open();
+   }
+</script>
+
 </body>
 </html>
