@@ -77,7 +77,6 @@
                             <td>
                                 <button class="blue_btn">보기</button>
                                 <button class="blue_btn">수정</button>
-                                <button class="blue_btn">일정관리</button>
                             </td>
                         </tr>
                     </tbody>

@@ -24,7 +24,7 @@
 
     /*상단 이미지 두개*/
     #backgroundImg{position: relative; z-index: 1;}
-    #personalImg{position: relative; z-index: 2; margin-left: 420px; margin-top: -100px;}
+    #personalImg{position: relative; z-index: 2; margin-left: 420px; margin-top: -50px;}
 
     /* 중앙 박스(div#stepOne) 내부공통 css */
     #stepOne{width:950px; border: 1px solid #dbdbdb;}
@@ -65,7 +65,6 @@
             <div id="stepOne">
                 <div id="backgroundImg">
                     <img src="#" width="100%" height="160px">
-                    <input type="file">
                 </div>
                 <div id="personalImg">
                     <img src="#" width="100px" height="100px" style="border-radius: 50px; background-color: darkblue;">
@@ -96,7 +95,7 @@
 	                    <tr>
 	                        <th>* 계좌 정보</th>
 	                        <td>
-	                            <select name="" id="">
+	                            <select name="" id="" style="margin-bottom:10px;">
 	                                <option value="">은행명</option>
 	                                <option value="">기업은행</option>
 	                                <option value="">국민은행</option>
@@ -104,7 +103,7 @@
 	                                <option value="">신한은행</option>
 	                                <option value="">카카오뱅크</option>
 	                                <option value="">우체국</option>
-	                            </select>    
+	                            </select>
 	                            <input type="text" placeholder="1234-56-78900" id="" name="" value="">
 	                            <h5>• 예금주가 본인 이름인 계좌만 설정이 가능합니다.</h5>
 	                        </td>
@@ -115,13 +114,6 @@
 	                            <textarea id="" name=""></textarea>
 	                            <h5>• 기본메시지는 여행자가 최초 문의를 했을 때 기본으로 제공되는 메시지 입니다.<br>
 	                                • 친절하고 구체적인 인사말로 예약을 유도하세요.</h5>
-	                        </td>
-	                    </tr>
-	                    <tr>
-	                        <th>예약알림설정</th>
-	                        <td>
-	                            <span style="margin-right: 20px;">이메일 알림</span><input type="radio" id="" name="" value=""><label>수신</label><input type="radio" name="email"><label>수신안함</label><br>
-	                            <span style="margin-right: 33px;">SMS 알림</span><input type="radio" id="" name="" value=""><label>수신</label><input type="radio" name="sms"><label>수신안함</label>
 	                        </td>
 	                    </tr>
 	                </table>
